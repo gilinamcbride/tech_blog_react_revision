@@ -1,4 +1,5 @@
 const { Schema, model } = require('mongoose');
+const Blog = require('./Blog');
 
 const UserSchema = new Schema(
   {
@@ -26,6 +27,7 @@ const UserSchema = new Schema(
       trim: true,
       unique: false,
     },
+    blogs: [{ type: Schema.Types.ObjectId, ref: 'Blog' }],
   },
   {
     toJSON: {
